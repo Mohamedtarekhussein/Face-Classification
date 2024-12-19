@@ -65,45 +65,10 @@ This project implements a face classification system using the DenseNet architec
   - Training and Validation Accuracy and Loss
   - Generate a Classification Report
 
----
 
-## Code Highlights
 
-### Plotting ROC Curve
-```python
-from sklearn.metrics import roc_curve, auc
-import matplotlib.pyplot as plt
 
-# Example code for plotting ROC curve
-for i in range(n_classes):
-    fpr, tpr, _ = roc_curve(y_true[:, i], y_score[:, i])
-    roc_auc = auc(fpr, tpr)
-    plt.plot(fpr, tpr, label=f'Class {i} (AUC = {roc_auc:.2f})')
 
-plt.legend()
-plt.show()
-```
-
-### Training Accuracy and Loss
-```python
-plt.figure(figsize=(12, 5))
-
-# Plot Training Accuracy
-plt.subplot(1, 2, 1)
-plt.plot(history["accuracy"], label="Training Accuracy")
-plt.plot(history["val_accuracy"], label="Validation Accuracy")
-plt.legend()
-plt.title("Training and Validation Accuracy")
-
-# Plot Loss
-plt.subplot(1, 2, 2)
-plt.plot(history["loss"], label="Training Loss")
-plt.plot(history["val_loss"], label="Validation Loss")
-plt.legend()
-plt.title("Training and Validation Loss")
-
-plt.show()
-```
 
 ---
 
